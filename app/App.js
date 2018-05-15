@@ -1,15 +1,11 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button,
+  Alert
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -20,19 +16,37 @@ const instructions = Platform.select({
 });
 
 type Props = {};
+type State = {};
+
 export default class App extends Component<Props> {
+  constructor(props: Props) {
+    super(props);
+
+    this.state = {};
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <View>
+          <Text style={styles.welcome}>
+            Welcome to React Native!
+          </Text>
+          <Text style={styles.instructions}>
+            To get started, edit App.js
+          </Text>
+          <Text style={styles.instructions}>
+            {instructions}
+          </Text>
+        </View>
+        <View>
+          <Button
+            onPress={() => {
+              Alert.alert('You tapped the button!');
+            }}
+            title="Press Me"
+          />
+        </View>
       </View>
     );
   }
