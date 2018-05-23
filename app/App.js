@@ -3,7 +3,7 @@ import {
   YellowBox,
 } from 'react-native';
 
-import { RootStack } from './config/routes';
+import { AppNavigator } from './config/routes';
 
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated'])
 
@@ -15,6 +15,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    return <RootStack />;
+    return <AppNavigator />;
   }
 }

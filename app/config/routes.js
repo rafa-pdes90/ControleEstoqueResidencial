@@ -1,12 +1,13 @@
 import React from 'react';
 import {
     createStackNavigator,
+    createSwitchNavigator,
 } from 'react-navigation';
 
 import HomeScreen from '../screens/Home';
 import DetailsScreen from '../screens/Details';
 
-export const RootStack = createStackNavigator (
+const RootStack = createStackNavigator (
     {
         Home: HomeScreen,
         Details: DetailsScreen,
@@ -22,5 +23,14 @@ export const RootStack = createStackNavigator (
             fontWeight: 'bold',
             },
         },
+    }
+);
+
+export const AppNavigator = createSwitchNavigator (
+    {
+        Root: RootStack, 
+    },
+    {
+        initialRouteName: 'Root',
     }
 );
