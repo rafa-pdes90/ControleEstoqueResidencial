@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  YellowBox,
   Platform,
   StyleSheet,
   Text,
@@ -10,6 +11,8 @@ import {
 import {
   createStackNavigator,
 } from 'react-navigation';
+
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated'])
 
 const styles = StyleSheet.create({
   container: {
