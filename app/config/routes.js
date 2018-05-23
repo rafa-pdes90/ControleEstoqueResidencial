@@ -4,6 +4,7 @@ import {
     createSwitchNavigator,
 } from 'react-navigation';
 
+import WelcomeScreen from '../screens/Welcome';
 import HomeScreen from '../screens/Home';
 import DetailsScreen from '../screens/Details';
 
@@ -28,9 +29,10 @@ const RootStack = createStackNavigator (
 
 export const AppNavigator = createSwitchNavigator (
     {
-        Root: RootStack, 
+        Welcome: WelcomeScreen,
+        Root: RootStack,
     },
     {
-        initialRouteName: 'Root',
+        initialRouteName: 'Welcome',
     }
 );
