@@ -25,3 +25,5 @@ https://facebook.github.io/react-native/docs/running-on-device.html
 https://facebook.github.io/react-native/docs/components-and-apis.html  
 https://reactnavigation.org/docs/en/hello-react-navigation.html  
 https://medium.com/the-react-native-log/organizing-a-react-native-project-9514dfadaa0  
+https://reactnavigation.org/docs/en/auth-flow.html  
+
