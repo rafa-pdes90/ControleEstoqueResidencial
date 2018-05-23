@@ -41,6 +41,17 @@ const instructions = Platform.select({
 });
 
 class HomeScreen extends Component {
+  static navigationOptions = {
+    title: 'Home',
+    headerRight: (
+      <Button
+        onPress={() => alert('This is a button!')}
+        title="Info"
+        color="#000"
+      />
+    ),
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -67,6 +78,14 @@ class HomeScreen extends Component {
 }
 
 class DetailsScreen extends Component {
+  static navigationOptions = {
+    title: 'Details',
+    headerStyle: {
+      backgroundColor: '#fff',
+    },
+    headerTintColor: '#f4511e',
+  };
+
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -83,6 +102,15 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: 'Home',
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#f4511e',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
   }
 );
 
