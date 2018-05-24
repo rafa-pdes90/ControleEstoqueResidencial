@@ -1,8 +1,8 @@
 import React from 'react';
 import {
   View,
-  Button,
 } from 'react-native';
+import { Button } from 'react-native-elements'
 
 export default class WelcomeScreen extends React.Component {
     static navigationOptions = {
@@ -13,8 +13,12 @@ export default class WelcomeScreen extends React.Component {
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Button
-                title="Link Start!"
-                onPress={() => this.props.navigation.navigate('Home')}
+              raised
+              large
+              icon={{name: 'link'}}
+              backgroundColor="red"
+              title="Link Start!"
+              onPress={() => this.props.navigation.navigate('Home')}
             />
         </View>
       );
