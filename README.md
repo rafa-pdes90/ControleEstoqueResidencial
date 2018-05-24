@@ -16,8 +16,18 @@ https://facebook.github.io/react-native/docs/getting-started.html
 5. Instalar o React-Navigation-Props-Mapper (https://github.com/vonovak/react-navigation-props-mapper):  
 > yarn add react-navigation-props-mapper  
   
-6. Instalar o React-Navigation-https://github.com/vonovak/react-navigation-header-buttons  
+6. Instalar o React-Navigation-Header-Buttons (https://github.com/vonovak/react-navigation-header-buttons):  
 > yarn add react-navigation-header-buttons  
+  
+7. Instalar o React-Native-Elements (https://react-native-training.github.io/react-native-elements/):  
+> yarn add react-native-elements  
+  
+8. Instalar o React-Native-Vector-Icons (https://github.com/oblador/react-native-vector-icons):  
+> yarn add react-native-vector-icons  
+> react-native link react-native-vector-icons  
+  
+9. Compilar:  
+> react-native run-android  
   
   
 Links úteis:  
@@ -26,4 +36,5 @@ https://facebook.github.io/react-native/docs/components-and-apis.html
 https://reactnavigation.org/docs/en/hello-react-navigation.html  
 https://medium.com/the-react-native-log/organizing-a-react-native-project-9514dfadaa0  
 https://reactnavigation.org/docs/en/auth-flow.html  
+https://github.com/jondot/awesome-react-native  
 
