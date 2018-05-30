@@ -18,7 +18,7 @@ export default class WelcomeScreen extends React.Component {
               icon={{name: 'link'}}
               backgroundColor="red"
               title="Link Start!"
-              onPress={() => this.props.navigation.navigate('Home')}
+              onPress={() => this.props.navigation.navigate('Gambiarra')}
             />
         </View>
       );

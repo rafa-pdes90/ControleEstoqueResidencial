@@ -1,38 +1,72 @@
 import React from 'react';
 import {
     createStackNavigator,
+    createDrawerNavigator,
     createSwitchNavigator,
 } from 'react-navigation';
+import { Icon } from 'react-native-elements'
 
 import WelcomeScreen from '../screens/Welcome';
+import GambiarraScreen from '../screens/Gambiarra';
 import HomeScreen from '../screens/Home';
 import DetailsScreen from '../screens/Details';
+import HomeTestScreen from '../screens/HomeTest';
 
-const RootStack = createStackNavigator (
+const HomeStack = createStackNavigator (
     {
         Home: HomeScreen,
         Details: DetailsScreen,
     },
     {
         initialRouteName: 'Home',
-        navigationOptions: {
+        headerMode: 'float',
+        navigationOptions: ({navigation}) => ({
             headerStyle: {
-            backgroundColor: '#f4511e',
+                backgroundColor: '#f4511e',
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
-            fontWeight: 'bold',
+                fontWeight: 'bold',
             },
-        },
+            headerLeft: <Icon
+                raised
+                name='bars'
+                type='font-awesome'
+                color='#f50'
+                onPress={() => navigation.openDrawer()} />
+        }),
+    }
+);
+
+const RootStack = createDrawerNavigator (
+    {
+        HomeStack: HomeStack,
+        HomeTest: HomeTestScreen,
+    },
+    {
+        initialRouteName: 'HomeStack',
+        backBehavior: 'none',
+    }
+);
+
+const GambiarraStack = createSwitchNavigator (
+    {
+        Gambiarra: GambiarraScreen,
+        Root: RootStack,
+    },
+    {
+        initialRouteName: 'Gambiarra',
+        backBehavior: 'initialRoute',
     }
 );
 
 export const AppNavigator = createSwitchNavigator (
     {
         Welcome: WelcomeScreen,
-        Root: RootStack,
+        Gambiarra: GambiarraStack,
     },
     {
         initialRouteName: 'Welcome',
+        backBehavior: 'none',
     }
 );
