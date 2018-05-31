@@ -1,10 +1,12 @@
 import React from 'react';
 import {
+  Platform,
+} from 'react-native';
+import {
     createStackNavigator,
     createDrawerNavigator,
     createSwitchNavigator,
 } from 'react-navigation';
-import { Icon } from 'react-native-elements'
 
 import WelcomeScreen from '../screens/Welcome';
 import GambiarraScreen from '../screens/Gambiarra';
@@ -19,33 +21,27 @@ const HomeStack = createStackNavigator (
     },
     {
         initialRouteName: 'Home',
-        headerMode: 'float',
-        navigationOptions: ({navigation}) => ({
-            headerStyle: {
-                backgroundColor: '#f4511e',
-            },
-            headerTintColor: '#fff',
+        headerMode: Platform.OS == 'android' ? 'screen' : 'float',
+        navigationOptions: {
             headerTitleStyle: {
                 fontWeight: 'bold',
             },
-            headerLeft: <Icon
-                raised
-                name='bars'
-                type='font-awesome'
-                color='#f50'
-                onPress={() => navigation.openDrawer()} />
-        }),
+        },
     }
 );
 
 const RootStack = createDrawerNavigator (
     {
-        HomeStack: HomeStack,
+        Principal: HomeStack,
         HomeTest: HomeTestScreen,
     },
     {
-        initialRouteName: 'HomeStack',
+        initialRouteName: 'Principal',
         backBehavior: 'none',
+        order: ['Principal', 'HomeTest'],
+        contentOptions: {
+            activeTintColor: '#f4511e',
+        },
     }
 );
 

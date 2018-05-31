@@ -4,8 +4,9 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
 } from 'react-native';
+import { Icon, SearchBar, Button } from 'react-native-elements';
+import Dimensions from 'Dimensions';
 
 const styles = StyleSheet.create({
   container: {
@@ -34,16 +35,69 @@ const instructions = Platform.select({
 });
 
 export default class HomeScreen extends React.Component {
-    static navigationOptions = {
-      title: 'Home',
-      headerRight: (
-        <Button
-          onPress={() => alert('This is a button!')}
-          title="Info"
-          color="#000"
-        />
-      ),
+    static navigationOptions = ({navigation}) => {
+      const params = navigation.state.params || {};
+      const screen = Dimensions.get("window");
+
+      return {
+        title: 'Principal',
+        headerTitle: params.isSearchActive ?
+        (
+          <View style={{width: screen.width - 150, marginLeft: 20}}>
+            <SearchBar
+              round
+              containerStyle={{backgroundColor: 'transparent'}}
+              onChangeText={null}
+              onClearText={null}
+              icon={{ type: 'font-awesome', name: 'search' }}
+              placeholder='Pesquisar...' />
+            </View>
+        ) :
+        (
+          undefined
+        ),
+        headerTitleStyle: {
+          marginLeft: 20,
+        },
+        headerStyle: {
+            backgroundColor: '#f4511e',
+        },
+        headerTintColor: '#fff',
+        headerLeft: (
+          <View>
+            <Icon
+              raised
+              name='bars'
+              type='font-awesome'
+              color='#f50'
+              onPress={() => navigation.openDrawer()} />
+            </View>
+        ),
+        headerRight: params.isSearchActive ?
+        (
+          <View style={{marginRight: 20}}>
+            <Icon
+              name='close'
+              type='font-awesome'
+              color='#fff'
+              onPress={() => navigation.setParams({isSearchActive: !params.isSearchActive})} />
+          </View>
+        ) :
+        (
+          <View style={{marginRight: 20}}>
+            <Icon
+              name='search'
+              type='font-awesome'
+              color='#fff'
+              onPress={() => navigation.setParams({isSearchActive: !params.isSearchActive})} />
+          </View>
+        ),
+      };
     };
+
+    componentWillMount() {
+      this.props.navigation.setParams({ isSearchActive: false });
+    }
   
     render() {
       return (
@@ -62,7 +116,10 @@ export default class HomeScreen extends React.Component {
           <View>
             <Button
               title="Go to Details"
-              onPress={() => this.props.navigation.navigate('Details')}
+              onPress={() => {
+                this.props.navigation.setParams({ isSearchActive: false });
+                this.props.navigation.navigate('Details');
+              }}
             />
           </View>
         </View>
