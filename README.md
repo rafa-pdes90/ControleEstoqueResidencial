@@ -13,20 +13,23 @@ https://facebook.github.io/react-native/docs/getting-started.html
 4. Instalar o React-Navigation (https://reactnavigation.org/docs/en/getting-started.html):  
 > yarn add react-navigation  
   
-5. Instalar o React-Navigation-Props-Mapper (https://github.com/vonovak/react-navigation-props-mapper):  
-> yarn add react-navigation-props-mapper  
-  
-6. Instalar o React-Navigation-Header-Buttons (https://github.com/vonovak/react-navigation-header-buttons):  
-> yarn add react-navigation-header-buttons  
-  
-7. Instalar o React-Native-Elements (https://react-native-training.github.io/react-native-elements/):  
+5. Instalar o React-Native-Elements (https://react-native-training.github.io/react-native-elements/):  
 > yarn add react-native-elements  
   
-8. Instalar o React-Native-Vector-Icons (https://github.com/oblador/react-native-vector-icons):  
+6. Instalar o React-Native-Vector-Icons (https://github.com/oblador/react-native-vector-icons):  
 > yarn add react-native-vector-icons  
 > react-native link react-native-vector-icons  
   
-9. Compilar:  
+7. Instalar o React-Navigation-BackHandler (https://github.com/vonovak/react-navigation-backhandler):  
+> yarn add react-navigation-backhandler  
+  
+8. Instalar o React-Navigation-Props-Mapper (https://github.com/vonovak/react-navigation-props-mapper):  
+> yarn add react-navigation-props-mapper  
+  
+9. Instalar o React-Navigation-Header-Buttons (https://github.com/vonovak/react-navigation-header-buttons):  
+> yarn add react-navigation-header-buttons  
+
+10. Compilar:  
 > react-native run-android  
   
   
