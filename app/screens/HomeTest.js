@@ -33,9 +33,9 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class HomeScreen extends React.Component {
+export default class HomeTestScreen extends React.Component {
     static navigationOptions = {
-      title: 'Home',
+      title: 'HomeTest',
       headerRight: (
         <Button
           onPress={() => alert('This is a button!')}
